@@ -79,7 +79,6 @@ ui <- navbarPage(
   )
 )
 
-# Server: Backend Logic
 server <- function(input, output) {
   # --- EDA Logic ---
   output$eda_plot <- renderPlot({
@@ -123,7 +122,7 @@ server <- function(input, output) {
     }
   })
   
-  # --- Predictive Modeling Logic ---
+
   observeEvent(input$train_model, {
     # Split data into training and testing sets
     set.seed(123)
@@ -173,3 +172,4 @@ shinyApp(ui = ui, server = server)
 
 library(shiny)
 runApp("~/Desktop/ms/4 Fall/Data Visualization/Final/final_app.R")
+
